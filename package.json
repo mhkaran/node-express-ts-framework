@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prepare": "husky install",
     "build": "tsc",
     "lint": "eslint --fix --ext .ts ./",
     "start": "node dist/server/index.js",
