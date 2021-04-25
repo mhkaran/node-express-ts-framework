@@ -9,6 +9,11 @@ class Post{
             console.log('Hello from post request!');
             next();
         });
+
+        this.routes.post('/user/create',async(_req:express.Request,_res:express.Response,next:express.NextFunction)=>{
+             
+            next();
+        });
     }
 }
 

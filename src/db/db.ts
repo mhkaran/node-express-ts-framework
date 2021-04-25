@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import {env} from "../util";
 
 class DB{
 
@@ -23,7 +24,17 @@ class DB{
     }
 
     public async connect(){
-        const connection:string = "";
+         const options:mongoose.ConnectionOptions ={
+             poolSize:5,
+             autoReconnect:true,
+             useNewUrlParser:true,
+             useCreateIndex:true,
+             connectTimeoutMS:5000
+         } 
+
+        mongoose.connect(env.dbConfig.uri,options).catch(err=>{
+            console.log(`mongooes connection error, ${err}`);
+        });
     }
 }
 
