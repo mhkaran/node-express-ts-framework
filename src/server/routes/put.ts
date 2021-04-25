@@ -5,7 +5,7 @@ class Put{
     constructor(){
         this.routes = express.Router();
 
-        this.routes.post('/',async(_req:express.Request,_res:express.Response,next:express.NextFunction)=>{
+        this.routes.put('/',async(_req:express.Request,_res:express.Response,next:express.NextFunction)=>{
             console.log('Hello from put request!');
             next();
         });

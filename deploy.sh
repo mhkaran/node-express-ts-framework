@@ -1,3 +1,2 @@
-export MONGO_URI = ''
-
-
+ 
+npm run dev

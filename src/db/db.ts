@@ -6,7 +6,7 @@ class DB{
     constructor(){
         mongoose.Promise = Promise;
 
-        mongoose.connection.on('connectd',async()=>{
+        mongoose.connection.on('connectd',()=>{
             console.log('connection established');
         });
 
@@ -29,10 +29,11 @@ class DB{
              autoReconnect:true,
              useNewUrlParser:true,
              useCreateIndex:true,
+             useUnifiedTopology:true,
              connectTimeoutMS:5000
          } 
 
-        mongoose.connect(env.dbConfig.uri,options).catch(err=>{
+        await mongoose.connect(env.dbConfig.uri,options).catch(err=>{
             console.log(`mongooes connection error, ${err}`);
         });
     }

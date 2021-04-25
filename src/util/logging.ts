@@ -1,11 +1,11 @@
 import {ILogs} from "../interface"
-import retry from "./retry";
+import _retry from "./retry";
 
 class Logging{
     constructor(){
 
     }
-    public async log(logs:ILogs){
+    public async log(_logs:ILogs){
      try{}
      catch(ex){
         // retry code 
