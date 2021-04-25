@@ -1,0 +1,8 @@
+{
+    "server":{
+        "port":3000
+    },
+    "service":{
+        "retryCount":10
+    }
+}
