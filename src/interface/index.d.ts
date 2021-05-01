@@ -1,7 +1,9 @@
-export {IConfig,IDBConfig,IServiceConfig,IServerConfig} from "./IConfig";
-export {ILogs} from "./ILogs";
-export {IUser} from "./IUser";
-export {IJWTPlayload} from "./IJWTPlayload";
+import {IConfig,IDBConfig,IServiceConfig,IServerConfig} from "./IConfig";
+import {ILogs} from "./ILogs";
+import {IUser} from "./IUser";
+import {IJWTPlayload} from "./IJWTPlayload";
+import {IResponse} from "./IResponse";
+import {IError} from "./IError";
 
 export {
     IConfig,
@@ -10,5 +12,7 @@ export {
     IServerConfig,
     ILogs,
     IUser,
-    IJWTPlayload
+    IJWTPlayload,
+    IResponse,
+    IError
 };
