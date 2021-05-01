@@ -2,7 +2,7 @@ import {IUser} from "../interface"
 import {user_db} from "../db";
 
 class User{
-    
+
     constructor(){
 
     }

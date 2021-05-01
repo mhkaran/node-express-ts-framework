@@ -24,14 +24,14 @@ class DB{
     }
 
     public async connect(){
-         const options:mongoose.ConnectionOptions ={
-             poolSize:5,
-             autoReconnect:true,
-             useNewUrlParser:true,
-             useCreateIndex:true,
-             useUnifiedTopology:true,
-             connectTimeoutMS:5000
-         } 
+        const options:mongoose.ConnectionOptions ={
+            poolSize:5,
+            autoReconnect:true,
+            useNewUrlParser:true,
+            useCreateIndex:true,
+            useUnifiedTopology:true,
+            connectTimeoutMS:30000
+        }
 
         await mongoose.connect(env.dbConfig.uri,options).catch(err=>{
             console.log(`mongooes connection error, ${err}`);

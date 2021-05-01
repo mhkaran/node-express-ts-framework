@@ -6,10 +6,9 @@ class Notification{
 
     }
     public async send(_logs:ILogs){
-     try{}
-     catch(ex){
-        // retry code 
-     }   
+        try{} catch(ex){
+        // retry code
+        }
     }
 }
 

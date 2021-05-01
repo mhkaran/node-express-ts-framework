@@ -6,10 +6,9 @@ class Logging{
 
     }
     public async log(_logs:ILogs){
-     try{}
-     catch(ex){
-        // retry code 
-     }   
+        try{} catch(ex){
+        // retry code
+        }
     }
 }
 

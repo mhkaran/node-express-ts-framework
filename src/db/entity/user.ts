@@ -5,7 +5,7 @@ const userSchema = new Schema({
     firstName:{type:String},
     lastName:{type:String}
 });
- 
+
 const user = mongoose.model("user",userSchema,"user");
 
 export default user;

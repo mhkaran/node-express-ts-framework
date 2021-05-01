@@ -17,5 +17,5 @@ app.use(put.routes);
 
 db.connect();
 
-app.listen(config.server.port,()=> console.log(`server is running on port ${config.server.port}!`));
+app.listen(config.port,()=> console.log(`server is running on port ${config.port}!`));
 
