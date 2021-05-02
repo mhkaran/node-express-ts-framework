@@ -1,5 +1,5 @@
 
 export interface IResponse<T>{
-    statusCode:Number;
+    statusCode:number;
     data:T
 }

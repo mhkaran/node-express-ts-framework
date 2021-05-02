@@ -7,22 +7,27 @@ class User{
     }
 
     public async create(userDetails:IUser){
-        let res:IResponse<string|IError>;
+        let res:IResponse<string|IError>={} as IResponse<any>;
         let validationResult = await validate.user(userDetails);
-        if (validationResult!=="") {
+        console.log(validationResult);
+        if (validationResult!="") {
             res!.statusCode=400;
             res!.data={code:1, message:validationResult}; 
+            return res!;
         }
         try{
-            user_db.create(userDetails);
+            console.log('1');
+            await user_db.create(userDetails);
+            console.log('2');
             res!.statusCode=201
             res!.data= "user created!"
+            return res!;
         }
         catch(ex){
             res!.statusCode=500;
             res!.data= {code:1,message:"somthing went wrong!"}; 
-        }
-        return res!;
+            return res!;
+        }        
     }
 }
 

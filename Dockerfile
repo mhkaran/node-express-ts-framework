@@ -1,24 +1,28 @@
 
 FROM node:12.16.2-alpine
  
-ARG SERVER_PATH=/usr/src
+ARG SERVER_PATH=/usr/app
  
 RUN mkdir -p ${SERVER_PATH}
-WORKDIR =/usr/src/
-COPY ./ .
+WORKDIR =/usr/app/
+
+COPY ./package.json ./config.json ./tsconfig.json .
+
+RUN npm install --dev
+
+RUN npm install typescript
+
+COPY ./src ./src
+
+RUN npm run build
+
+RUN npm uninstall typescript 
+
+RUN rm -rf ./src ./tsconfig.json
 
 WORKDIR ={SERVER_PATH}
 
-CMD ["npm", "build"] 
-
-# rm -rf /usr/src/src
-
-# rm -rf /usr/src/unit-test
-
-
-#RUN apt-get update && apt-get install -y
-
-
 EXPOSE 8000 8000
 # The docker entry point command
+
 CMD ["npm", "start"]

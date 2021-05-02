@@ -12,8 +12,8 @@ class Post{
         });
 
         this.routes.post('/user/create',async(req:express.Request,res:express.Response,_next:express.NextFunction)=>{
-            await user.create(req.body);
-            res.status(201).end('user created');
+           let resData = await user.create(req.body);
+            res.status(resData.statusCode).json(resData.data);
         });
     }
 }

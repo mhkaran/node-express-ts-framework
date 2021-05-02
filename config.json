@@ -1,8 +1,4 @@
 {
-    "server":{
-        "port":5000
-    },
-    "service":{
-        "retryCount":10
-    }
+    "port":8080,
+    "retryCount":10
 }
