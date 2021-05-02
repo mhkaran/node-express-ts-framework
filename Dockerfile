@@ -8,7 +8,7 @@ WORKDIR =/usr/app/
 
 COPY ./package.json ./config.json ./tsconfig.json .
 
-RUN npm install --dev
+RUN npm install --only=prod
 
 RUN npm install typescript
 
