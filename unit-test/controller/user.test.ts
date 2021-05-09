@@ -18,7 +18,7 @@ describe('test user controller', async()=>{
     })
 
     it('user valiation failed, ', async()=>{
-        
+
         sinon.mock(validate).expects("user").returns('last name is mandatory!');
 
         const userData:IUser= {email:'test@gmail.com',firstName:'test',lastName:''};

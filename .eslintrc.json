@@ -17,7 +17,7 @@
     "max-len": [2, 250],
     "no-param-reassign": ["error", { "props": true }],
     "no-var": "error",
-    "complexity": ["error", { "max": 2 }],
+    "complexity": ["error", { "max": 7 }],
     "curly":"error",
     "eqeqeq":"error",
     "no-alert":"error",
