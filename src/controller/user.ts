@@ -9,7 +9,6 @@ class User{
     public async create(userDetails:IUser){
         let res:IResponse<string|IError>={} as IResponse<any>;
         let validationResult = await validate.user(userDetails);
-        console.log(validationResult);
         if (validationResult!="") {
             res!.statusCode=400;
             res!.data={code:1, message:validationResult}; 
@@ -31,6 +30,6 @@ class User{
     }
 }
 
-const user = new User();
+const user_controller = new User();
 
-export default user;
+export default user_controller;

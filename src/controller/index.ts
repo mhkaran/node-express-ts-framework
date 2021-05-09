@@ -1,5 +1,5 @@
-import user from "./user";
+import user_controller from "./user";
 
 export {
-    user
+    user_controller
 };

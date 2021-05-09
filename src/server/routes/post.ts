@@ -1,5 +1,5 @@
 import express from "express";
-import {user} from "../../controller";
+import {user_controller} from "../../controller";
 
 class Post{
     public routes:express.Router;
@@ -12,7 +12,7 @@ class Post{
         });
 
         this.routes.post('/user/create',async(req:express.Request,res:express.Response,_next:express.NextFunction)=>{
-           let resData = await user.create(req.body);
+           let resData = await user_controller.create(req.body);
             res.status(resData.statusCode).json(resData.data);
         });
     }
