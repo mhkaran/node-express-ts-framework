@@ -22,6 +22,7 @@ class User{
             res!.data= "user created!"
             return res!;
         } catch(ex){
+            console.log(ex)
             res!.statusCode=500;
             res!.data= {code:1,message:"somthing went wrong!"};
             return res!;

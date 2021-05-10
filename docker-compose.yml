@@ -7,17 +7,18 @@ services:
     restart: on-failure
     container_name: node-ts-container
     environment:
-      MONGO_URI: mongodb://localhost:27017/?authSource=admin
+      MONGO_URI: mongodb://mongo_db:27017/?authSource=admin
     ports:
       - "8000:8000"
-    depends_on:
-      - "mongodb"  
+    links:
+      - mongodb
+
   mongodb:
     image: mongo
     restart: on-failure
-    container_name: mongodb
+    container_name: mongo_db
     environment:
     - PUID=1000
     - PGID=1000
     ports:
-      - "27017:27017"    
+      - "27017:27017"
