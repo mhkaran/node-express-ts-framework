@@ -14,8 +14,14 @@
   "license": "ISC",
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint && npm run build"
+      "pre-commit": "npm run lint && npm run build && npm run test && git add ."
     }
+  },
+  "nyc":{
+    "check-coverage":true,
+    "functions":60,
+    "branches":60,
+    "lines":60
   },
   "dependencies": {
     "cors": "^2.8.5",

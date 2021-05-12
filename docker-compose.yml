@@ -10,7 +10,7 @@ services:
       MONGO_URI: mongodb://mongo_db:27017/?authSource=admin
     ports:
       - "8000:8000"
-    links:
+    depends_on:
       - mongodb
 
   mongodb:
